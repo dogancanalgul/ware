@@ -1,0 +1,44 @@
+<script src="js/ar/aframe-master.min.js"></script>
+<script src="js/ar/aframe-ar-nft.js"></script>
+<script src="js/gesture-detector.js"></script>
+<script src="js/gesture-handler.js"></script>
+<script src="js/rotation.js"></script>
+<script src="js/swipe-to-action.js"></script>
+
+<style>
+  .arjs-loader {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .arjs-loader div {
+    text-align: center;
+    font-size: 1.25em;
+    color: white;
+  }
+</style>
+
+<body style="margin : 0px; overflow: hidden;">-->
+  <!-- minimal loader is shown until image descriptors are loaded -->
+  <!--
+  <div class="arjs-loader">
+    <div>Loading, please wait...</div>
+  </div>-->
+  <a-scene
+    vr-mode-ui="enabled: false;"
+    renderer="logarithmicDepthBuffer: true;"
+    embedded
+    stats
+    gesture-detector
+    sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960;
+    arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;"
+  >
+    <!-- we use cors proxy to avoid cross-origin problems -->
